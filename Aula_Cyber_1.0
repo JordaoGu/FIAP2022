@@ -1,0 +1,122 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled0.ipynb",
+      "provenance": [],
+      "collapsed_sections": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/JordaoGu/FIAP2022/blob/main/Aula_Cyber_1.0\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# identificaçao de adjetivos agressivos"
+      ],
+      "metadata": {
+        "id": "9cZG_062FD9T"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import re"
+      ],
+      "metadata": {
+        "id": "ST4P4ncC4e7-"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        ""
+      ],
+      "metadata": {
+        "id": "tBbEDMGBFXnn"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "yCahXozwEAlu",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "63a4acf9-f2e8-4fd3-cdd9-a20c214018ef"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "digite usa palavra aqui =bambu\n",
+            "xingamento detectado\n"
+          ]
+        }
+      ],
+      "source": [
+        "lista =[\"gordo\", \"bola\", \"bambu\", \"mula\", \"retardado\", \"retardada\", \"boçal\", \"idiota\", \"magrelo\", \"magrela\", \"graveto\", \"burro\", \"burra\", \"gorda\", \"imbecil\", \"cadela\", \"bicha\", \"corna\", \"corno\", \"egua\", \"seu preto\", \"seu macaco\", \"m@c@co\",] \n",
+        "palavra = input(\"digite usa palavra aqui =\")\n",
+        "if (palavra in lista): # se a palavra estiver na lista\n",
+        "  print(\"xingamento detectado\")\n",
+        "else: # se ela nao estiver\n",
+        "  print(\"xingamento nao detectado\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def Cacapalavra (field): #\"(?i)\" ele detecta mesmo se for letra maiuscula ou minuscula.\n",
+        "  match = re.search(\"(?i)|(gordo)|(bola)|(bambu)|(mula)|(retardado)|(retardada)|(boçal)|(idiota)|(magrelo)|(magrela)|(graveto)|(burro)|(burra)|(gorda)|(imbecil)|(cadela)|(bicha)|(corna)|(corno)|(egua)|(seu preto)|(seu macaco)|(m@c@co)\",field.lower())\n",
+        "\n",
+        "  if match:\n",
+        "    print(\"xingamento detectado\")\n",
+        "  else:\n",
+        "    print(\"xingamento nao detectado\")\n",
+        "Cacapalavra(input())\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "F8nIYphYzerA",
+        "outputId": "7309a02f-29ba-410a-f3f1-2d8e42547fdf"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "gordo\n",
+            "xingamento detectado\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
